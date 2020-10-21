@@ -124,6 +124,8 @@ public class RequestProbeService {
 	public static void processAllEntryProbeExtensions(Event event, RequestContext requestContext) {
 		if (event == requestContext.getRootEvent()) {
 			// Add the request to Active Request list
+            System.out.println("Adding new request: " + requestContext.getRootEvent() + ": " + requestContext + " "
+                    + requestContext.getRootEvent().getType());
 			requestContext.setRequestContextIndex(activeRequests.add(requestContext)); 
 		}
 
